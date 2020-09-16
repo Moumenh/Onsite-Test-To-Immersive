@@ -26,7 +26,12 @@ function wordLengths(str){
 // countOccurrences("hello, world!", "l"); // 3
 
 function countOccurrences(string, character) {
-    const strArray = string.split('')
+    return string.split('').reduce((acc,el) => {
+        if(acc===el){
+            acc += el
+        }
+        return acc.length-1
+    },character)
 }
 
 
@@ -161,7 +166,9 @@ function multiplier(x) {
 //ANOTHER NOTE : solve this question using while loop. 
 
 function indexesOnly (array) {
-  // TODO: your code here 
+  for(let i =0;i<array.length;i++){
+    array[i] = i
+  }
 }
 //=============================================================================
 /*                                  Q9                                       */
@@ -186,7 +193,7 @@ displayBusTimes(cityZBusSchedules, "bus15Schedule"); //"The bus will arrive in t
 displayBusTimes(cityZBusSchedules, "bus22Schedule"); //"The bus will arrive in the next [15,30,45] minutes."
 
 function displayBusTimes(busScheduleObj, busLine) {
-	// TODO: your code here
+	return busScheduleObj[busLine]
 }
 
 //=============================================================================
@@ -196,8 +203,12 @@ function displayBusTimes(busScheduleObj, busLine) {
 //In your own words, no more than 3 sentences, answer the following:
 
 //Q1:When accessing object properties, what is the difference between dot notation and bracket notation?
+// we can access properties from both, but when we need to insert data to the obj, dot behaves as adding a string named 
+// what ever after the dot, but we can use initialized variable inside the bracket notation 
 
 //Q2 :What does the typeof operator do?
+// returns the type of our input if its number, string .. or object
 
 //Q3 :How do we add a property to an object?
+// using the Q1
 
