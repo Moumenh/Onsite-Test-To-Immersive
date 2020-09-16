@@ -82,15 +82,21 @@
 .form__name_1{
     display: flex;
     flex-direction: column;
+    width: 45%;
 }
 .form__email{
     display: flex;
     flex-direction: column;
+    width: 45%;
 }
+
+
 
 input{
     margin-top: 15px;
 }
+
+
 label{
     margin-top: 15px;
 }
@@ -138,6 +144,15 @@ input[type=submit] {
     }
     .form__name{
         flex-direction: column;
+        align-items: center;
+    }
+    .form__name_1{
+        
+        width: 100%;
+    }
+    .form__email{
+        
+        width: 100%;
     }
   }
 

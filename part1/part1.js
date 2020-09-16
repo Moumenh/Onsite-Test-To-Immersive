@@ -1,4 +1,46 @@
 
+
+function each(coll, f) {
+    if (Array.isArray(coll)) {
+      for (var i = 0; i < coll.length; i++) {
+        f(coll[i], i);
+      }
+    } else {
+      for (var key in coll) {
+        f(coll[key], key);
+      }
+    }
+  }
+  
+  function filter(array, predicate) {
+    var acc = [];
+    each(array, function(element, i) {
+      if (predicate(element, i)) {
+        acc.push(element);
+      }
+    });
+    return acc;
+  }
+  
+  function map(array, func) {
+    var acc = [];
+    each(array, function(element, i) {
+      acc.push(func(element, i));
+    });
+    return acc;
+  }
+  
+  function reduce(array, f, acc) {
+    if (acc === undefined) {
+      acc = array[0];
+      array = array.slice(1);
+    }
+    each(array, function(element, i) {
+      acc = f(acc, element, i);
+    });
+    return acc;
+  }
+
 //=============================================================================
 /*                              Q1                                           */
 //=============================================================================
@@ -26,12 +68,36 @@ function wordLengths(str){
 // countOccurrences("hello, world!", "l"); // 3
 
 function countOccurrences(string, character) {
-    return string.split('').reduce((acc,el) => {
-        if(acc===el){
-            acc += el
+    var func = function(acc,el){
+        if(character === el){
+            acc++
         }
-        return acc.length-1
-    },character)
+        return acc
+    }
+    return reduce((string.split('')), func,0)
+}
+
+
+function countOccurrences2(string, character) {
+    return string.split('').reduce((acc,el) => {
+        if(character === el){
+            acc++
+        }
+        return acc
+    },0)
+}
+
+
+
+function countOccurrences3(string, character) {
+    const arr = string.split('')
+    let count = 0
+    for(let i = 0;i<arr.length;i++){
+        if(character === arr[i]){
+            count++
+        }
+    }
+    return count
 }
 
 
@@ -44,9 +110,16 @@ function countOccurrences(string, character) {
 
 
 function wordsLongerThanThree(str) {
-    str.split(' ').filter((el) => {
+    return str.split(' ').filter((el) => {
         return el.length>3
     })
+}
+
+function wordsLongerThanThree2(str){
+    var predicate = function(el){
+        return el.length>3
+    }
+    return filter((str.split(' '),predicate))
 }
 
 
