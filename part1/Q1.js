@@ -102,7 +102,33 @@ function sayFavoriteFood(object){
   //Write function displayCircles that take circles array as an input and 
   //the output should display all the circle's information(Radius, Area, and Perimeter of a circle).
 
-  //  Write your code here
+  function Circle(radius){
+      let rad = radius
+      return {
+        increaseRadius: function(n){
+            return rad*n    
+        },
+        circleArea: function(){
+            return rad*rad*Math.PI
+        },
+        circlePerimeter:function(){
+            return 2*rad*Math.PI
+        },
+        radius
+      }
+  }
+
+  let circle1 = Circle(50)
+  let circle2 = Circle(70)
+  const circles = [circle1,circle2]
+
+  function displayCircles(arr){
+      let str = ''
+      for(let i = 0;i<arr.length;i++){
+          str += `${i+1} Radius is ${arr[i].radius}, Area is ${arr[i].circleArea()}, Perimeter is ${arr[i].circlePerimeter()} \n`
+      }
+      return str
+  }
   
 
 //=============================================================================
@@ -116,7 +142,10 @@ function sayFavoriteFood(object){
 // multiplier1(3); ==> 6
 
 function multiplier(x) {
-  // TODO: your code here 
+  let multi = x 
+  return function (y){
+      return multi * y
+  }
 }
 
 
