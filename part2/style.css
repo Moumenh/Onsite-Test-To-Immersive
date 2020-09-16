@@ -4,26 +4,14 @@
     padding: 20px;
 }
 
-.nav__el1{
+.nav__el{
     padding: 8px 16px;
     border: lightgray 1px solid;
     border-radius: 4px;
     font-size: 22px;
     cursor: pointer;
 }
-.nav__el1:hover{
-    background-color: lightskyblue;
-}
-
-
-.nav__el2{
-    padding: 8px 16px;
-    border: lightgray 1px solid;
-    border-radius: 4px;
-    font-size: 22px;
-    cursor: pointer;
-}
-.nav__el2:hover{
+.nav__el:hover{
     background-color: lightskyblue;
 }
 
@@ -54,6 +42,18 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+}
+
+.card__email{
+    color: white;
+}
+
+.card:active {
+    background-color: linen;
+}
+
+.card__span:hover > p {
+    color: black;
 }
 
 .card__text{
