@@ -1,12 +1,30 @@
+
 .nav{
     display: flex;
     padding: 20px;
 }
 
-.nav__el{
+.nav__el1{
     padding: 8px 16px;
     border: lightgray 1px solid;
+    border-radius: 4px;
     font-size: 22px;
+    cursor: pointer;
+}
+.nav__el1:hover{
+    background-color: lightskyblue;
+}
+
+
+.nav__el2{
+    padding: 8px 16px;
+    border: lightgray 1px solid;
+    border-radius: 4px;
+    font-size: 22px;
+    cursor: pointer;
+}
+.nav__el2:hover{
+    background-color: lightskyblue;
 }
 
 .container{
@@ -40,6 +58,74 @@
     padding: 10px;
 }
 
+.form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* width: 30vw; */
+    padding: 20px;
+
+}
+
+.form__container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border: lightgrey 1px solid;
+    padding: 20px;
+}
+
+.form__name{
+    display: flex;
+    justify-content: space-between;
+}
+.form__name_1{
+    display: flex;
+    flex-direction: column;
+}
+.form__email{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    margin-top: 15px;
+}
+label{
+    margin-top: 15px;
+}
+
+.form__img{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__msg{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea{
+    margin-top: 15px;
+}
+
+input[type=submit] {
+    background-color:wheat;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: lightpink;
+  }
+
 
 @media only screen and (max-width: 960px) {
     .container {
@@ -47,4 +133,19 @@
         /* grid-column-gap: 50px; */
         grid-template-columns: 1fr;
     }
+    .card__span{
+        flex-direction: column;
+    }
+    .form__name{
+        flex-direction: column;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .card{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
   }
